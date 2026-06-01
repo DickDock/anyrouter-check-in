@@ -1,7 +1,9 @@
 name: AnyRouter 自动签到
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    # 修改 cron 值可重新激活被停用的定时 workflow。
+    # 使用非整点分钟，避开 GitHub Actions 整点高峰窗口。
+    - cron: '23 */6 * * *'
   workflow_dispatch:
 
 jobs:
